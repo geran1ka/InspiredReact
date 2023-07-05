@@ -5,8 +5,7 @@ import cn from 'classnames';
 const list = [
   {link: 'women', title: 'Женщины'},
   {link: 'men', title: 'Мужчины'}
-
-]
+];
 
 export const Gender = () => (
   <ul className={s.gender}>
