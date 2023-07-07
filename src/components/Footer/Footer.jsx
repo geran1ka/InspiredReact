@@ -1,6 +1,6 @@
 import { Container } from '../Layout/Container/Container.jsx';
 import s from './Footer.module.scss';
-import { Category } from '../header/Navigation/Category/Category.jsx';
+import { Category } from './Categoty/Category.jsx';
 import { Social } from './Social/Social.jsx';
 import { Contacts } from './Contacts/Contacts.jsx';
 import { Copyright } from './Copyright/Copyright.jsx';
