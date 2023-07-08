@@ -28,7 +28,7 @@ const navigationSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchNavigation.fulfilled, (state, action) => {
-        state.status = 'succes';
+        state.status = 'success';
         state.categories = action.payload;
         state.genderList = Object.keys(action.payload);
       })
