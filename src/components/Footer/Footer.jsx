@@ -6,11 +6,11 @@ import { Contacts } from './Contacts/Contacts.jsx';
 import { Copyright } from './Copyright/Copyright.jsx';
 import { Development } from './Development/Devolopment.jsx';
 
-export const Footer = ({list}) => (
+export const Footer = () => (
   <footer>
     <Container>
       <div className={s.container}>
-        <Category list={list}/>
+        <Category />
         
         <Social />
         

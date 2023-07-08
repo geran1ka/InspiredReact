@@ -4,9 +4,8 @@ import { CATEGORY_URL } from "../const.js";
 export const fetchNavigation = createAsyncThunk(
   "navigation/fetchNavigation",
   async () => {
-    const responce = await fetch(CATEGORY_URL);
-    const data = await responce.json();
-    return data;
+    const response = await fetch(CATEGORY_URL);
+    return await response.json();
   }
 )
 const navigationSlice = createSlice({
