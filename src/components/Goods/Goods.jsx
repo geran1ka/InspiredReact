@@ -1,5 +1,6 @@
-import { Container } from '../components/Layout/Container/Container';
-import { Product } from '../components/Product/Product';
+
+import { Container } from '../Layout/Container/Container';
+import { Product } from '../Product/Product';
 import s from './Goods.module.scss';
 
 import { useSelector } from 'react-redux';
