@@ -11,7 +11,10 @@ export const Color = ({color, check}) => {
   }, [color])
 
   return (
-    <li ref={colorRef} className={cn(s.color, check ? s.colorCheck : "")} style={{"--data-color": color}}></li>
+    <li 
+      className={cn(s.color, check ? s.colorCheck : "")}
+      ref={colorRef} 
+    />
   )
 }
 
