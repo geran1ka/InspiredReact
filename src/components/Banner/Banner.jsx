@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { Container } from '../Layout/Container/Container';
+import { Container } from '../Layout/Container/Container.jsx';
 import s from './Banner.module.scss';
-import { API_URL } from '../../const';
+import { API_URL } from '../../const.js';
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 

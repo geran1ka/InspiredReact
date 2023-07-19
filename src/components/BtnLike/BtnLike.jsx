@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {ReactComponent as LikeSVG} from '../../assets/heart.svg';
 import s from './BtnLike.module.scss';
-import {addToFavorite, removeFromFavorite} from '../../features/favoritesSlice';
+import {addToFavorite, removeFromFavorite} from '../../features/favoritesSlice.js';
 import cn from 'classnames';
 
 export const BtnLike = ({id}) => {

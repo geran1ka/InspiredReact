@@ -1,6 +1,6 @@
 
-import { Container } from '../Layout/Container/Container';
-import { Product } from '../Product/Product';
+import { Container } from '../Layout/Container/Container.jsx';
+import { Product } from '../Product/Product.jsx';
 import s from './Goods.module.scss';
 
 import { useSelector } from 'react-redux';
@@ -20,7 +20,6 @@ export const Goods = ({title}) => {
             {...item}/>
           </li>)}
       </ul>
-      {/* {categoryData?.category && <p>Категория: {categoryData?.category}</p>}  */}
     </Container>
   </section>
   )

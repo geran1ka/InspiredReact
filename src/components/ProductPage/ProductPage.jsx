@@ -78,7 +78,7 @@ export const ProductPage = () => {
             <ProductSize
               size={product.size}
               selectedSize={selectedSize}
-              handleColorChange={handleColorChange}
+              handleColorChange={handleSizeChange}
             />
 
             <div className={s.description}>
@@ -101,7 +101,7 @@ export const ProductPage = () => {
                 aria-label='Добавить в избранное'
                 type='button'
               >
-                <BtnLike id={id} />
+                {/* <BtnLike id={id} /> */}
               </button>
             </div>
           </form>

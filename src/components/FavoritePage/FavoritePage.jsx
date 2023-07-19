@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Goods } from '../Goods/Goods';
-import { fetchCategory } from '../../features/goodsSlice';
+import { Goods } from '../Goods/Goods.jsx';
+import { fetchCategory } from '../../features/goodsSlice.js';
 import { useEffect } from 'react';
 
 
