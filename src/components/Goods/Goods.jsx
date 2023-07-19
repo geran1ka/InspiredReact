@@ -1,5 +1,6 @@
 
 import { Container } from '../Layout/Container/Container.jsx';
+import { Pagination } from '../Pagination/Pagination.jsx';
 import { Product } from '../Product/Product.jsx';
 import s from './Goods.module.scss';
 
@@ -20,6 +21,7 @@ export const Goods = ({title}) => {
             {...item}/>
           </li>)}
       </ul>
+      <Pagination />
     </Container>
   </section>
   )
