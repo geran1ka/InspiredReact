@@ -18,7 +18,7 @@ export const Product = ({id, pic, title, price, colors, description}) => (
     <div className={s.row}>
       <p className={s.price}>руб {price}</p>
 
-      {/* <BtnLike id={id} /> */}
+      <BtnLike id={id} />
 
     </div>
     <ColorList colors={colors}/>

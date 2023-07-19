@@ -31,7 +31,7 @@ export const Top = () => (
             </NavLink>
           </li>
           <li className={s.navItem}>
-            <NavLink to='/favotite' className={cn(s.link, s.like)}>
+            <NavLink to='/favorite' className={cn(s.link, s.like)}>
               <LikeSVG />
             </NavLink>
           </li>

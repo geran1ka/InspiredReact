@@ -78,7 +78,7 @@ export const ProductPage = () => {
             <ProductSize
               size={product.size}
               selectedSize={selectedSize}
-              handleColorChange={handleSizeChange}
+              handleSizeChange={handleSizeChange}
             />
 
             <div className={s.description}>
@@ -96,13 +96,8 @@ export const ProductPage = () => {
 
               <button className={s.addCart} type='submit'>В корзину</button>
 
-              <button
-                className={s.favorite}
-                aria-label='Добавить в избранное'
-                type='button'
-              >
-                {/* <BtnLike id={id} /> */}
-              </button>
+              <BtnLike id={id} />
+
             </div>
           </form>
         </Container>
