@@ -17,17 +17,22 @@ export const ProductPage = () => {
   const { product } = useSelector(state => state.product);
   const [count, setCount] = useState(1);
   const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
 
-const handleIncrement = () => {
-  setCount((prevCount) => prevCount + 1)
-}
+  const handleIncrement = () => {
+    setCount((prevCount) => prevCount + 1)
+  }
 
-const handleDecrement = () => {
-  if (count > 1) setCount((prevCount) => prevCount - 1);
-}
+  const handleDecrement = () => {
+    if (count > 1) setCount((prevCount) => prevCount - 1);
+  }
 
-  const handleColorChange = e => {
+  const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
+  }
+
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
   }
 
   useEffect(() => {
@@ -38,7 +43,11 @@ const handleDecrement = () => {
   return (
     <section className={s.card}>
       <Container className={s.container}>
-        <img src={`${API_URL}${product.pic}`} alt={`${product.title} ${product.description}`}></img>
+        <img 
+          className={s.image}
+          src={`${API_URL}${product.pic}`} 
+          alt={`${product.title} ${product.description}`}
+        />
         <form className={s.content}>
           <h2 className={s.title}>{product.title}</h2>
 
@@ -59,7 +68,11 @@ const handleDecrement = () => {
             />
           </div>
 
-          {/* <ProductSize size={product.size} />        */}
+          <ProductSize 
+            size={product.size}
+            selectedSize={selectedSize}
+            handleColorChange={handleColorChange}
+          />       
 
           <div className={s.description}>
             <p className={cn(s.subtitle, s.descriptionTitle)}>Описание</p>
