@@ -16,10 +16,11 @@ export const Goods = ({title}) => {
       <ul className={s.list}>
         {goodsList.map(item =>
           <li key={item.id}>
-            <Product  {...item}/>
+            <Product 
+            {...item}/>
           </li>)}
       </ul>
-      {categoryData?.category && <p>Категория: {categoryData?.category}</p>} 
+      {/* {categoryData?.category && <p>Категория: {categoryData?.category}</p>}  */}
     </Container>
   </section>
   )

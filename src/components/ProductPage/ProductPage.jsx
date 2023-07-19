@@ -1,58 +1,58 @@
-import { useEffect, useState } from 'react';
-import { Container } from '../Layout/Container/Container';
+import {useEffect, useState} from 'react';
+import {Container} from '../Layout/Container/Container';
 import s from './ProductPage.module.scss';
 import cn from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProduct } from '../../features/productSlice';
-import { useParams } from 'react-router-dom';
-import { API_URL } from '../../const';
-import { ColorList } from '../ColorList/ColorList';
-import { Count } from '../Count/Count';
-import { Goods } from '../Goods/Goods';
-import { fetchCategory } from '../../features/goodsSlice';
-import { BtnLike } from '../BtnLike/BtnLike';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchProduct} from '../../features/productSlice';
+import {useParams} from 'react-router-dom';
+import {API_URL} from '../../const';
+import {ColorList} from '../ColorList/ColorList';
+import {Count} from '../Count/Count';
+import {Goods} from '../Goods/Goods';
+import {fetchCategory} from '../../features/goodsSlice';
+import {BtnLike} from '../BtnLike/BtnLike';
+import {ProductSize} from './ProductSize/ProdutSize';
 
 export const ProductPage = () => {
-
   const dispatch = useDispatch();
   const {id} = useParams();
-  const { product } = useSelector(state => state.product);
+  const {product} = useSelector(state => state.product);
   const [count, setCount] = useState(1);
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const {gender, category} = product;
 
   const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1)
-  }
+    setCount((prevCount) => prevCount + 1);
+  };
 
   const handleDecrement = () => {
     if (count > 1) setCount((prevCount) => prevCount - 1);
-  }
+  };
 
   const handleColorChange = (e) => {
     setSelectedColor(e.target.value);
-  }
+  };
 
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
-  }
+  };
 
   useEffect(() => {
-    dispatch(fetchProduct(id))
+    dispatch(fetchProduct(id));
   }, [id, dispatch]);
 
   useEffect(() => {
-    dispatch(fetchCategory({gender, category, count: 4, top: true, exclude: id}))
-  }, [gender, category, id, dispatch])
+    dispatch(fetchCategory({gender, category, count: 4, top: true, exclude: id}));
+  }, [gender, category, id, dispatch]);
 
   return (
     <>
       <section className={s.card}>
         <Container className={s.container}>
-          <img 
+          <img
             className={s.image}
-            src={`${API_URL}${product.pic}`} 
+            src={`${API_URL}${product.pic}`}
             alt={`${product.title} ${product.description}`}
           />
           <form className={s.content}>
@@ -68,18 +68,18 @@ export const ProductPage = () => {
             <div className={s.color}>
               <span className={cn(s.subtitle, s.colorTitle)}>Цвет</span>
 
-              <ColorList 
+              <ColorList
                 colors={product.colors}
                 selectedColor={selectedColor}
                 handleColorChange={handleColorChange}
               />
             </div>
 
-            <ProductSize 
+            <ProductSize
               size={product.size}
               selectedSize={selectedSize}
               handleColorChange={handleColorChange}
-            />       
+            />
 
             <div className={s.description}>
               <p className={cn(s.subtitle, s.descriptionTitle)}>Описание</p>
@@ -87,7 +87,7 @@ export const ProductPage = () => {
             </div>
 
             <div className={s.control}>
-              <Count 
+              <Count
                 className={s.count}
                 count={count}
                 handleIncrement={handleIncrement}
@@ -96,7 +96,7 @@ export const ProductPage = () => {
 
               <button className={s.addCart} type='submit'>В корзину</button>
 
-              <button 
+              <button
                 className={s.favorite}
                 aria-label='Добавить в избранное'
                 type='button'
@@ -110,5 +110,5 @@ export const ProductPage = () => {
 
       <Goods title='Вам также может понравиться' />
     </>
-  )
-}
+  );
+};

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Goods } from '../Goods/Goods';
 import { fetchCategory } from '../../features/goodsSlice';
-import { useEffect } from '../../features/goodsSlice';
+import { useEffect } from 'react';
 
 
 export const FavoritePage = () => {

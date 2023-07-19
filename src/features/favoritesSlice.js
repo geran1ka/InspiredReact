@@ -4,7 +4,7 @@ import {createSlice} from '@reduxjs/toolkit';
 //   ? JSON.parse(localStorage.getItem('favorites'))
 //   : [];
 
-  const initialState =  JSON.parse(localStorage.getItem('favorites') || '[]');
+const initialState = JSON.parse(localStorage.getItem('favorites') || '[]');
 
 const favoritesSlice = createSlice({
   name: 'favoriites',
@@ -22,12 +22,12 @@ const favoritesSlice = createSlice({
       const id = action.payload.id;
       const index = state.indexOf(id);
       if (index !== -1) {
-        state.splice(index, 1)
+        state.splice(index, 1);
       }
       localStorage.setItem('favorites', JSON.stringify(state));
-    }
-  }
+    },
+  },
 });
 
-export const {addToFavorite, removeFromFavorite} = favoritesSlice.action
-export default favoritesSlice.reducers
+export const {addToFavorite, removeFromFavorite} = favoritesSlice.actions;
+export default favoritesSlice.reducer;

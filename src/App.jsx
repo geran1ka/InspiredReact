@@ -1,14 +1,14 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import { MainPage } from './components/MainPage/MainPage.jsx'
-import { ErrorPage } from './components/ErrorPage/ErrorPage.jsx'
-import { Root } from './routes/Root.jsx'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { fetchNavigation } from './features/navigationSlice.js'
-import { fetchColors } from './features/colorSlice.js'
-import { ProductPage } from './components/ProductPage/ProductPage.jsx'
-import { FavoritePage } from './components/FavoritePage copy/FavoritePage.jsx'
-import { CartPage } from './components/CartPage/CartPage.jsx'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { MainPage } from './components/MainPage/MainPage.jsx';
+import { ErrorPage } from './components/ErrorPage/ErrorPage.jsx';
+import { Root } from './routes/Root.jsx';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchNavigation } from './features/navigationSlice.js';
+import { fetchColors } from './features/colorSlice.js';
+import { ProductPage } from './components/ProductPage/ProductPage.jsx';
+import { CartPage } from './components/CartPage/CartPage.jsx';
+import { FavoritePage } from './components/FavoritePage/FavoritePage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
