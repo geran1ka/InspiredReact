@@ -1,6 +1,12 @@
+import { Cart } from "./Cart/Cart.jsx";
+import { Order } from "./Order/Order.jsx";
+
 export const  CartPage = () => {
 
   return (
-    <div>CartPage</div>
+    <>
+    <Cart />
+    <Order />
+    </>
   )
 }
