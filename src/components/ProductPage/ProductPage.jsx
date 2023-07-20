@@ -12,7 +12,7 @@ import {Goods} from '../Goods/Goods';
 import {fetchCategory} from '../../features/goodsSlice';
 import {BtnLike} from '../BtnLike/BtnLike';
 import {ProductSize} from './ProductSize/ProdutSize';
-import { addToCart } from '../../features/cartSlice';
+import {addToCart} from '../../features/cartSlice';
 
 export const ProductPage = () => {
   const dispatch = useDispatch();
@@ -50,10 +50,10 @@ export const ProductPage = () => {
   }, [gender, category, id, dispatch]);
 
   useEffect(() => {
-    if (colorList.length && colors.length) {
-      setSelectedColor(colorList.find(color => color.id === colors[0]).title)
+    if (colorList?.length && colors?.length) {
+      setSelectedColor(colorList.find(color => color.id === colors[0]).title);
     }
-  }, [colorList, colors])
+  }, [colorList, colors]);
 
   return (
     <>
@@ -71,7 +71,7 @@ export const ProductPage = () => {
               color: selectedColor,
               size: selectedSize,
               count,
-            }))
+            }));
           }}>
             <h2 className={s.title}>{product.title}</h2>
 
