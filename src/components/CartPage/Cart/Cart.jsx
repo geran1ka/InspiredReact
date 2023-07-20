@@ -4,7 +4,14 @@ import {Container} from '../../Layout/Container/Container.jsx';
 import {CartItem} from './CartItem/CartItem.jsx';
 
 export const Cart = ({cartItems, goodsList}) => {
-  const totlaPrice = 0;
+  const totlaPrice = cartItems.reduce((sum, item) => {
+    const product = goodsList.find(product => product.id === item.id);
+    if (product) {
+      return sum + (product.price * item.count);
+    } else {
+      return sum;
+    }
+  }, 0);
 
 
   return (
@@ -20,7 +27,7 @@ export const Cart = ({cartItems, goodsList}) => {
               </li>
             ))}
           </ul> :
-          <h3>В корзине пусто</h3>
+          <h3 className={s.empty}>В корзине пусто</h3>
         }
 
         <div className={s.total}>
