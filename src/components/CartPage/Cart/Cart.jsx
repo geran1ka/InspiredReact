@@ -1,10 +1,9 @@
-import {useSelector} from 'react-redux';
 import s from './Cart.module.scss';
 import {Container} from '../../Layout/Container/Container.jsx';
 import {CartItem} from './CartItem/CartItem.jsx';
 
 export const Cart = ({cartItems, goodsList}) => {
-  const totlaPrice = cartItems.reduce((sum, item) => {
+  const totalPrice = cartItems.reduce((sum, item) => {
     const product = goodsList.find(product => product.id === item.id);
     if (product) {
       return sum + (product.price * item.count);
@@ -32,7 +31,7 @@ export const Cart = ({cartItems, goodsList}) => {
 
         <div className={s.total}>
           <p>Итого:</p>
-          <p>руб {totlaPrice}</p>
+          <p>руб {totalPrice}</p>
         </div>
       </Container>
     </section>

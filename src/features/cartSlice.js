@@ -7,11 +7,11 @@ export const sendOrder = createAsyncThunk(
   'cart/sendOrder',
   async (data) => {
     const url = new URL(ORDER_URL);
-    const responce = await fetch(url, {
+    const response = await fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
     });
-    return await responce.json();
+    return await response.json();
   }
 )
 
